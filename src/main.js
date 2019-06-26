@@ -15,7 +15,8 @@ const client = new ApolloClient({
   request: operation => {
     operation.setContext({
       headers: {
-        authorization: 'Bearer ' + 'c5980081f75f31a8507c0ff1064bc57c6c35a4b9'
+        Accept: 'application/vnd.github.vixen-preview+json',
+        Authorization: 'Bearer ' + ''
       },
     });
   }

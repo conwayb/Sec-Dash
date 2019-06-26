@@ -8,7 +8,7 @@
       <v-layout row justify-start class="mb-3">
           <!-- Sort By Project Name -->
           <v-tooltip top>
-             <v-btn small flat color="grey" @click="sortBy('title')" slot="activator">
+             <v-btn small flat color="grey" @click="sortBy('name')" slot="activator">
                <v-icon small left>folder</v-icon>
                <span class="caption text-lowercase">By project names</span>
              </v-btn>
@@ -16,7 +16,7 @@
           </v-tooltip>
            <!-- Sort By Owner -->
            <v-tooltip top>
-             <v-btn small flat color="grey" @click="sortBy('Owner')" slot="activator">
+             <v-btn small flat color="grey" @click="sortBy('repositoryOwner.login')" slot="activator">
                <v-icon small left>person</v-icon>
                <span class="caption text-lowercase">By Owner</span>
              </v-btn>
@@ -119,7 +119,7 @@ import { gql } from "apollo-boost";
     methods: {
       // Method takes a string and sorts for our table
       sortBy(prop) {
-        this.projects.sort((a,b) => a[prop] < b[prop] ? -1 : 1)
+        this.repositoryOwner.sort((a,b) => a[prop] < b[prop] ? -1 : 1)
       }
     }
   }
